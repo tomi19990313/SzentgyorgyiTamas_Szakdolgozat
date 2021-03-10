@@ -16,3 +16,4 @@ C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\Skill
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.csproj.CopyComplete
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.exe
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.pdb
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\App.baml

@@ -2,7 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <BitmapImage x:Key="arrow" UriSource="images/arrow.png"></BitmapImage>
+        </ResourceDictionary>
     </Application.Resources>
+    
 </Application>
