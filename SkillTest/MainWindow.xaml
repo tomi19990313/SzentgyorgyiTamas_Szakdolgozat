@@ -6,8 +6,8 @@
         xmlns:wpf="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
         mc:Ignorable="d"
         Title="Iránytévesztés vizsgálat" 
-        MinHeight="400" MinWidth="400" ResizeMode="CanResizeWithGrip" WindowState="Maximized" 
-        Icon="/images/icon.ico">
+        MinHeight="450" MinWidth="400" ResizeMode="CanResizeWithGrip" WindowState="Maximized" 
+        Icon="/images/icon.ico"> <!-- StaticResource -->
 
     <Window.Resources>
         <ResourceDictionary>
@@ -38,6 +38,7 @@
 
     <Grid Background="#FF00A8FF">
         <Grid.RowDefinitions>
+            <RowDefinition MinHeight="80" Height="60*"/>
             <RowDefinition MinHeight="80" Height="80*"/>
             <RowDefinition MinHeight="80" Height="80*"/>
             <RowDefinition MinHeight="80" Height="80*"/>
@@ -54,7 +55,11 @@
             <Label x:Name="titleName" Content="Iránytévesztés vizsgálat" FontWeight="Bold" FontSize="5"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0" Width="2.5 cm" Height="1 cm">
+            <Button x:Name="StartButton" Content="Indítás" FontSize="18" Background="Red" BorderBrush="Black" BorderThickness="2" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}">
             <Image MinWidth="1 cm" MinHeight="1 cm" RenderTransformOrigin="0.5,0.5" Source="{StaticResource arrow}" >
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -64,7 +69,7 @@
             </Image>
         </Viewbox>
 
-        <Viewbox Grid.Row="2" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -74,11 +79,11 @@
             </Image>
         </Viewbox>
 
-        <Viewbox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" />
         </Viewbox>
 
-        <Viewbox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ViewboxGazeAwareAnimation}">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -88,9 +93,9 @@
             </Image>
         </Viewbox>
 
-        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Nézz jobbra!" MinHeight="1 cm" MinWidth="1 cm" FontSize="18" FontWeight="Bold" Padding="15" BorderThickness="4" BorderBrush="Black"/>
         </Viewbox>
     </Grid>
-    
+
 </Window>
