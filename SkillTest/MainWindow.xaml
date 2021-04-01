@@ -56,7 +56,7 @@
         </Viewbox>
 
         <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0" Width="2.5 cm" Height="1 cm">
-            <Button x:Name="StartButton" Content="Indítás" FontSize="18" Background="Red" BorderBrush="Black" BorderThickness="2" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
+            <Button x:Name="StartButton" Content="Indítás" Click="StartButton_Click" FontSize="18" Background="#FF00B600" BorderBrush="Black" BorderThickness="2" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
         </Viewbox>
 
         <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}">
@@ -94,7 +94,7 @@
         </Viewbox>
 
         <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Nézz jobbra!" MinHeight="1 cm" MinWidth="1 cm" FontSize="18" FontWeight="Bold" Padding="15" BorderThickness="4" BorderBrush="Black"/>
+            <Label x:Name="DirectionLabel" Content="Ide nézz!" MinHeight="1 cm" MinWidth="1 cm" FontSize="18" FontWeight="Bold" Padding="15" BorderThickness="4" BorderBrush="Black" Foreground="Red"/>
         </Viewbox>
     </Grid>
 
