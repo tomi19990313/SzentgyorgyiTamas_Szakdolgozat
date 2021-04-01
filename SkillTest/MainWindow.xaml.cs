@@ -30,7 +30,7 @@ namespace SkillTest
             this.Timer.Interval = TimeSpan.FromSeconds(3); // Temporary value 3 --> from constructor parameter TODO
             this.Timer.Tick += this.TimerTicker;
 
-            this.CurrentGazeNumber = 1;
+            this.CurrentGazeNumber = 0;
         }
 
 
@@ -43,6 +43,8 @@ namespace SkillTest
         // When time period expire
         private void TimerTicker(object sender, EventArgs e)
         {
+            this.CurrentGazeNumber++;
+
             if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer 
             {
                 this.Timer.Stop();
@@ -76,8 +78,51 @@ namespace SkillTest
                         break;
                 }
             }
+        }
 
-            this.CurrentGazeNumber++;
+        // Event Handlers for arrow gaze moments
+        private void TopArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
+        {
+            if (e.HasGaze.Equals(true))  // If looking upon
+            {
+                SaveGazeDatas("top");
+            }
+        }
+
+        private void RightArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
+        {
+            if (e.HasGaze.Equals(true))  // If looking upon
+            {
+                SaveGazeDatas("right");
+            }
+        }
+
+        private void BottomArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
+        {
+            if (e.HasGaze.Equals(true))  // If looking upon
+            {
+                SaveGazeDatas("bottom");
+            }
+        }
+
+        private void LeftArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
+        {
+            if (e.HasGaze.Equals(true))  // If looking upon
+            {
+                SaveGazeDatas("left");
+            }
+        }
+
+        // Function for save the gaze datas into the ReceivedResults array
+        private void SaveGazeDatas(string direction)
+        {
+            // If it is time for looing the arrow, and it is the first looking at this time period
+            if (((this.CurrentGazeNumber % 2).Equals(1)) && ((this.Result.getReceivedResults(this.CurrentGazeNumber / 2)) == null))
+            {
+                this.Result.setReceivedResults(this.CurrentGazeNumber / 2, direction);
+
+                //MessageBox.Show((this.CurrentGazeNumber / 2).ToString() + " --> " + direction);
+            }
         }
     }
 }

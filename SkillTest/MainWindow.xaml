@@ -59,7 +59,7 @@
             <Button x:Name="StartButton" Content="Indítás" Click="StartButton_Click" FontSize="18" Background="#FF00B600" BorderBrush="Black" BorderThickness="2" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="TopArrow_HasGazeChanged">
             <Image MinWidth="1 cm" MinHeight="1 cm" RenderTransformOrigin="0.5,0.5" Source="{StaticResource arrow}" >
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -69,7 +69,7 @@
             </Image>
         </Viewbox>
 
-        <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="LeftArrow_HasGazeChanged">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5" >
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -79,11 +79,11 @@
             </Image>
         </Viewbox>
 
-        <Viewbox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="RightArrow_HasGazeChanged">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" />
         </Viewbox>
 
-        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ViewboxGazeAwareAnimation}">
+        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="BottomArrow_HasGazeChanged">
             <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
