@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -27,7 +26,7 @@ namespace SkillTest
             }
 
             // Set Timer
-            this.Timer.Interval = TimeSpan.FromSeconds(3); // Temporary value 3 --> from constructor parameter TODO
+            this.Timer.Interval = TimeSpan.FromSeconds(1); // Temporary value 3 --> from constructor parameter TODO
             this.Timer.Tick += this.TimerTicker;
 
             this.CurrentGazeNumber = 0;
@@ -45,10 +44,11 @@ namespace SkillTest
         {
             this.CurrentGazeNumber++;
 
-            if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer 
+            if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer. Temporary value 20 --> calculate from constructor parameter TODO
             {
                 this.Timer.Stop();
                 DirectionLabel.Content = "Vége!";
+                this.DisplayTestResult();
 
                 return;
             }
@@ -85,7 +85,7 @@ namespace SkillTest
         {
             if (e.HasGaze.Equals(true))  // If looking upon
             {
-                SaveGazeDatas("top");
+                SaveGazeDatas("0");
             }
         }
 
@@ -93,7 +93,7 @@ namespace SkillTest
         {
             if (e.HasGaze.Equals(true))  // If looking upon
             {
-                SaveGazeDatas("right");
+                SaveGazeDatas("1");
             }
         }
 
@@ -101,7 +101,7 @@ namespace SkillTest
         {
             if (e.HasGaze.Equals(true))  // If looking upon
             {
-                SaveGazeDatas("bottom");
+                SaveGazeDatas("2");
             }
         }
 
@@ -109,7 +109,7 @@ namespace SkillTest
         {
             if (e.HasGaze.Equals(true))  // If looking upon
             {
-                SaveGazeDatas("left");
+                SaveGazeDatas("3");
             }
         }
 
@@ -123,6 +123,62 @@ namespace SkillTest
 
                 //MessageBox.Show((this.CurrentGazeNumber / 2).ToString() + " --> " + direction);
             }
+        }
+
+        // Function for displaying the result at the end of the test
+        private void DisplayTestResult()
+        {
+            string result="";
+
+            result += "Helyes irányok:  ";  // Helyes irányok
+            for(int i=0; i<10; i++)
+            {
+                switch (this.Result.getCorrectResults(i))
+                {
+                    case "0":
+                        result += "fel  ";
+                        break;
+                    case "1":
+                        result += "jobb  ";
+                        break;
+                    case "2":
+                        result += "le  ";
+                        break;
+                    case "3":
+                        result += "bal  ";
+                        break;
+                    default:
+                        result += "hiányzik  ";
+                        break;
+                }
+            }
+
+            result += "\nNézett irányok:  ";  // Nézett irányok
+            for (int i = 0; i < 10; i++)
+            {
+                switch (this.Result.getReceivedResults(i))
+                {
+                    case "0":
+                        result += "fel  ";
+                        break;
+                    case "1":
+                        result += "jobb  ";
+                        break;
+                    case "2":
+                        result += "le  ";
+                        break;
+                    case "3":
+                        result += "bal  ";
+                        break;
+                    default:
+                        result += "hiányzik  ";
+                        break;
+                }
+            }
+
+            result += "\n\nPontszám: " + this.Result.GazeNumber.ToString() + "/" + this.Result.getNumericResult().ToString();  // Pontszám
+
+            MessageBox.Show(result, "Teszt eredmények");
         }
     }
 }

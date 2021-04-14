@@ -40,5 +40,21 @@ namespace SkillTest
         {
             this.ReceivedResults[index] = value;
         }
+
+        // Function for get the number of correct directions
+        public int getNumericResult()
+        {
+            int resultNumber = 0;
+
+            for (int i=0; i<this.GazeNumber; i++)
+            {
+                if (this.CorrectResults[i] == this.ReceivedResults[i])
+                {
+                    resultNumber++;
+                }
+            }
+
+            return resultNumber;
+        }
     }
 }
