@@ -63,7 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IranytevesztesResultWindow.xaml.cs">
+      <DependentUpon>IranytevesztesResultWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Result.cs" />
+    <Page Include="IranytevesztesResultWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

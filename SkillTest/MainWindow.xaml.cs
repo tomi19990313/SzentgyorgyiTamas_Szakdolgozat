@@ -44,7 +44,7 @@ namespace SkillTest
         {
             this.CurrentGazeNumber++;
 
-            if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer. Temporary value 20 --> calculate from constructor parameter TODO
+            if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer. Temporary value 20 --> calculate from constructor parameter TODO (gazenumber * 2)
             {
                 this.Timer.Stop();
                 DirectionLabel.Content = "Vége!";
@@ -128,57 +128,9 @@ namespace SkillTest
         // Function for displaying the result at the end of the test
         private void DisplayTestResult()
         {
-            string result="";
+            IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result);
 
-            result += "Helyes irányok:  ";  // Helyes irányok
-            for(int i=0; i<10; i++)
-            {
-                switch (this.Result.getCorrectResults(i))
-                {
-                    case "0":
-                        result += "fel  ";
-                        break;
-                    case "1":
-                        result += "jobb  ";
-                        break;
-                    case "2":
-                        result += "le  ";
-                        break;
-                    case "3":
-                        result += "bal  ";
-                        break;
-                    default:
-                        result += "hiányzik  ";
-                        break;
-                }
-            }
-
-            result += "\nNézett irányok:  ";  // Nézett irányok
-            for (int i = 0; i < 10; i++)
-            {
-                switch (this.Result.getReceivedResults(i))
-                {
-                    case "0":
-                        result += "fel  ";
-                        break;
-                    case "1":
-                        result += "jobb  ";
-                        break;
-                    case "2":
-                        result += "le  ";
-                        break;
-                    case "3":
-                        result += "bal  ";
-                        break;
-                    default:
-                        result += "hiányzik  ";
-                        break;
-                }
-            }
-
-            result += "\n\nPontszám: " + this.Result.GazeNumber.ToString() + "/" + this.Result.getNumericResult().ToString();  // Pontszám
-
-            MessageBox.Show(result, "Teszt eredmények");
+            iranytevesztesResult.ShowDialog();
         }
     }
 }
