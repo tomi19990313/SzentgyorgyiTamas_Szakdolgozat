@@ -6,6 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="arrow" UriSource="images/arrow.png"></BitmapImage>
+            <BitmapImage x:Key="icon" UriSource="images/icon.ico"></BitmapImage>
+            <BitmapImage x:Key="iranytevesztes_button" UriSource="images/iranytevesztes_button.png"></BitmapImage>
         </ResourceDictionary>
     </Application.Resources>
     

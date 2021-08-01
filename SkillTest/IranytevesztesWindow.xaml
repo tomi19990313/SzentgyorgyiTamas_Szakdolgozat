@@ -1,0 +1,101 @@
+﻿<Window x:Class="SkillTest.IranytevesztesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpf="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
+        mc:Ignorable="d"
+        Title="Iránytévesztés vizsgálat" 
+        MinHeight="450" MinWidth="400" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
+        Icon="{StaticResource icon}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ViewboxGazeAwareAnimation" TargetType="Viewbox">
+                <Setter Property="Visibility" Value="Visible"/>
+                <Setter Property="wpf:Behaviors.IsGazeAware" Value="True"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="wpf:Behaviors.HasGaze" Value="True">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1.0" To="0.0" Duration="0:0:.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                        <Trigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.0" To="1.0" Duration="0:0:.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.ExitActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="#FF00A8FF">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="80" Height="60*"/>
+            <RowDefinition MinHeight="80" Height="80*"/>
+            <RowDefinition MinHeight="80" Height="80*"/>
+            <RowDefinition MinHeight="80" Height="80*"/>
+            <RowDefinition MinHeight="80" Height="80*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="80" Width="80*"/>
+            <ColumnDefinition MinWidth="80" Width="80*"/>
+            <ColumnDefinition MinWidth="80" Width="80*"/>
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Row="0" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+            <Label x:Name="titleName" Content="Iránytévesztés vizsgálat" FontWeight="Bold" FontSize="5"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0" Width="2.5 cm" Height="1 cm">
+            <Button x:Name="StartButton" Content="Indítás" Click="StartButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="TopArrow_HasGazeChanged">
+            <Image MinWidth="1 cm" MinHeight="1 cm" RenderTransformOrigin="0.5,0.5" Source="{StaticResource arrow}" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-90"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="LeftArrow_HasGazeChanged">
+            <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="180"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="RightArrow_HasGazeChanged">
+            <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" />
+        </Viewbox>
+
+        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ViewboxGazeAwareAnimation}" wpf:Behaviors.HasGazeChanged="BottomArrow_HasGazeChanged">
+            <Image MinWidth="1 cm" MinHeight="1 cm" Source="{StaticResource arrow}" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="DirectionLabel" Content="Ide nézz!" MinHeight="1 cm" MinWidth="1 cm" FontSize="18" FontWeight="Bold" Padding="15" BorderThickness="4" BorderBrush="Black" Foreground="Red"/>
+        </Viewbox>
+    </Grid>
+
+</Window>

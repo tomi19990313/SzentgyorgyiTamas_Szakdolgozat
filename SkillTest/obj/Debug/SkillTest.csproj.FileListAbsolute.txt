@@ -4,8 +4,6 @@ C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\Skill
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\SkillTest.pdb
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\Tobii.Interaction.Model.dll
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\Tobii.Interaction.Net.dll
-C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.baml
-C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.g.cs
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\App.g.cs
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest_MarkupCompile.cache
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.g.resources
@@ -19,3 +17,7 @@ C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\Skill
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.csproj.AssemblyReference.cache
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesResultWindow.g.cs
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesResultWindow.baml
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesWindow.baml
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesWindow.g.cs
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.g.cs
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.baml

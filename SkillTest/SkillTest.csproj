@@ -66,12 +66,15 @@
     <Compile Include="IranytevesztesResultWindow.xaml.cs">
       <DependentUpon>IranytevesztesResultWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Result.cs" />
     <Page Include="IranytevesztesResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="IranytevesztesWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,10 +82,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="IranytevesztesWindow.xaml.cs">
+      <DependentUpon>IranytevesztesWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -116,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\iranytevesztes_button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Tobii.Interaction.0.7.1\build\Tobii.Interaction.targets" Condition="Exists('packages\Tobii.Interaction.0.7.1\build\Tobii.Interaction.targets')" />
