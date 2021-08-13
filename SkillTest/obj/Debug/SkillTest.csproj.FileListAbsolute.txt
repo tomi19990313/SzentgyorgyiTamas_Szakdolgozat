@@ -21,3 +21,5 @@ C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\Skill
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesWindow.g.cs
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.g.cs
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\MainWindow.baml
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesSettingsWindow.baml
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\IranytevesztesSettingsWindow.g.cs

@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 
+
 namespace SkillTest
 {
     public partial class IranytevesztesWindow : Window
@@ -27,7 +28,7 @@ namespace SkillTest
             }
 
             // Set Timer
-            this.Timer.Interval = TimeSpan.FromSeconds(1); // Temporary value 3 --> from constructor parameter TODO
+            this.Timer.Interval = TimeSpan.FromSeconds(1); // Temporary value 1 second --> from constructor parameter TODO
             this.Timer.Tick += this.TimerTicker;
 
             this.CurrentGazeNumber = 0;
@@ -39,6 +40,14 @@ namespace SkillTest
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             this.Timer.Start();
+        }
+
+
+
+        // Click the MenuButton
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();  // Close the IranytevesztesWindow
         }
 
 
@@ -89,7 +98,7 @@ namespace SkillTest
         // Event Handlers for arrow gaze moments
         private void TopArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
         {
-            if (e.HasGaze.Equals(true))  // If looking upon
+            if (e.HasGaze.Equals(true))  // If looking upon the top arrow
             {
                 SaveGazeDatas("0");
             }
@@ -99,7 +108,7 @@ namespace SkillTest
 
         private void RightArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
         {
-            if (e.HasGaze.Equals(true))  // If looking upon
+            if (e.HasGaze.Equals(true))  // If looking upon the right arrow
             {
                 SaveGazeDatas("1");
             }
@@ -109,7 +118,7 @@ namespace SkillTest
 
         private void BottomArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
         {
-            if (e.HasGaze.Equals(true))  // If looking upon
+            if (e.HasGaze.Equals(true))  // If looking upon the bottom arrow
             {
                 SaveGazeDatas("2");
             }
@@ -119,7 +128,7 @@ namespace SkillTest
 
         private void LeftArrow_HasGazeChanged(object sender, Tobii.Interaction.Wpf.HasGazeChangedRoutedEventArgs e)
         {
-            if (e.HasGaze.Equals(true))  // If looking upon
+            if (e.HasGaze.Equals(true))  // If looking upon the left arrow
             {
                 SaveGazeDatas("3");
             }
