@@ -11,9 +11,8 @@ namespace SkillTest
         private DispatcherTimer Timer;  // Timer for the time periods
         private Result Result;          // Result class object for representing the correct, and the received results of the test
         private int CurrentGazeNumber;  // The serial number of the actual gaze
-
-        private int gazeNumber;
-        private int gazeTimeDuration;
+        private int gazeNumber;         // Gaze repetition number
+        private int gazeTimeDuration;   // Time for one gaze (mp)
 
 
 
@@ -24,7 +23,7 @@ namespace SkillTest
             this.gazeNumber = gazeNumber;
             this.gazeTimeDuration = gazeTimeDuration;
 
-            Settings();
+            Settings();  // Setting the parameters
         }
 
 
@@ -198,17 +197,17 @@ namespace SkillTest
 
             iranytevesztesSettingsWindow.ShowDialog();
 
-            if ((iranytevesztesSettingsWindow.directionNumberComboBox.SelectedIndex == -1) | (iranytevesztesSettingsWindow.gazeTimeDurationComboBox.SelectedIndex == -1))
+            if ((iranytevesztesSettingsWindow.directionNumberComboBox.SelectedIndex == -1) | (iranytevesztesSettingsWindow.gazeTimeDurationComboBox.SelectedIndex == -1))  // If the window closed
             {
                 return;
             }
 
-            if (iranytevesztesSettingsWindow.cancelButtonPressed)
+            if (iranytevesztesSettingsWindow.cancelButtonPressed)  // If Mégsem pressed
             {
                 return;
             }
 
-            if (iranytevesztesSettingsWindow.saveButtonPressed)
+            if (iranytevesztesSettingsWindow.saveButtonPressed)    // If Mentés pressed
             {
                 gazeNumber = int.Parse(iranytevesztesSettingsWindow.directionNumberComboBox.Text);
                 gazeTimeDuration = int.Parse(iranytevesztesSettingsWindow.gazeTimeDurationComboBox.Text);

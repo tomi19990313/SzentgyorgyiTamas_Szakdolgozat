@@ -19,12 +19,14 @@ namespace SkillTest
             FillUpArrays();
             FillUpComboBoxes();
 
+            // Set default values
             saveButtonPressed = false;
             cancelButtonPressed = false;
         }
 
 
 
+        // Fill up the arrays what will be in the combo boxes
         private void FillUpArrays()
         {
             directionNumberArray = new int[30];
@@ -42,6 +44,8 @@ namespace SkillTest
         }
 
 
+
+        // Add the array values to the combo boxes
         private void FillUpComboBoxes()
         {
             directionNumberComboBox.ItemsSource = directionNumberArray;
@@ -53,7 +57,7 @@ namespace SkillTest
         // Click the saveButton
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((directionNumberComboBox.SelectedIndex == -1) | (gazeTimeDurationComboBox.SelectedIndex == -1))
+            if ((directionNumberComboBox.SelectedIndex == -1) | (gazeTimeDurationComboBox.SelectedIndex == -1))  // If one of the combo boxes is empty
             {
                 MessageBox.Show("Valamelyik érték nincs kiválasztva!", "Hiányzó érték!");
                 return;
@@ -71,6 +75,5 @@ namespace SkillTest
             cancelButtonPressed = true;
             this.Close();
         }
-
     }
 }
