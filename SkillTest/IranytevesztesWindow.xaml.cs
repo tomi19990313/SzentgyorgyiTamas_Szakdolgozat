@@ -8,30 +8,23 @@ namespace SkillTest
 {
     public partial class IranytevesztesWindow : Window
     {
-        private DispatcherTimer Timer = new DispatcherTimer();  // Timer for the time periods
-        private Result Result;  // Result class object for representing the correct, and the received results of the test
+        private DispatcherTimer Timer;  // Timer for the time periods
+        private Result Result;          // Result class object for representing the correct, and the received results of the test
         private int CurrentGazeNumber;  // The serial number of the actual gaze
 
+        private int gazeNumber;
+        private int gazeTimeDuration;
 
 
-        public IranytevesztesWindow()
+
+        public IranytevesztesWindow(int gazeNumber, int gazeTimeDuration)
         {
             InitializeComponent();
 
-            this.Result = new Result(10);  // Temporary value 10 --> from constructor parameter TODO
+            this.gazeNumber = gazeNumber;
+            this.gazeTimeDuration = gazeTimeDuration;
 
-            // Fill up the CorrectResults array, with random values from 0 to 3
-            var random = new Random();
-            for (int i = 0; i < this.Result.GazeNumber; i++)
-            {
-                this.Result.setCorrectResults(i, random.Next(4).ToString());
-            }
-
-            // Set Timer
-            this.Timer.Interval = TimeSpan.FromSeconds(1); // Temporary value 1 second --> from constructor parameter TODO
-            this.Timer.Tick += this.TimerTicker;
-
-            this.CurrentGazeNumber = 0;
+            Settings();
         }
 
 
@@ -39,6 +32,9 @@ namespace SkillTest
         // Click the StartButton
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            CreateNewResult(gazeNumber);  // Create a new Result object, and fill the CorrectResults array
+            SetTimer(gazeTimeDuration);   // Set Timer
+
             this.Timer.Start();
         }
 
@@ -57,14 +53,16 @@ namespace SkillTest
         {
             this.CurrentGazeNumber++;
 
-            if (this.CurrentGazeNumber.Equals(20))  // If last gaze finished, stop the timer. Temporary value 20 --> calculate from constructor parameter TODO (gazenumber * 2)
+            if (this.CurrentGazeNumber.Equals(gazeNumber * 2))  // If last gaze finished, stop the timer
             {
                 this.Timer.Stop();
                 DirectionLabel.Content = "Vége!";
+        
                 this.DisplayTestResult();
 
                 return;
             }
+
 
             if ((this.CurrentGazeNumber % 2).Equals(0))  // If it is time for looking the label
             {
@@ -143,8 +141,6 @@ namespace SkillTest
             if (((this.CurrentGazeNumber % 2).Equals(1)) && ((this.Result.getReceivedResults(this.CurrentGazeNumber / 2)) == null))
             {
                 this.Result.setReceivedResults(this.CurrentGazeNumber / 2, direction);
-
-                //MessageBox.Show((this.CurrentGazeNumber / 2).ToString() + " --> " + direction);
             }
         }
 
@@ -156,6 +152,67 @@ namespace SkillTest
             IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result);
 
             iranytevesztesResult.ShowDialog();
+        }
+
+
+
+        // Create a new Result object, and fill the CorrectResults array
+        private void CreateNewResult(int gazeNumber)
+        {
+            this.Result = new Result(gazeNumber);
+
+            // Fill up the CorrectResults array, with random values from 0 to 3
+            var random = new Random();
+            for (int i = 0; i < gazeNumber; i++)
+            {
+                this.Result.setCorrectResults(i, random.Next(4).ToString());
+            }
+        }
+
+
+
+        // Set Timer
+        private void SetTimer(int gazeTimeDuration)
+        {
+            this.Timer = new DispatcherTimer();
+            this.Timer.Interval = TimeSpan.FromSeconds(gazeTimeDuration);
+            this.Timer.Tick += this.TimerTicker;
+
+            this.CurrentGazeNumber = 0;
+        }
+
+
+
+        // Click the SettingsButton
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Settings();
+        }
+
+
+
+        // Setting the parameters
+        private void Settings()
+        {
+            IranytevesztesSettingsWindow iranytevesztesSettingsWindow = new IranytevesztesSettingsWindow();
+
+            iranytevesztesSettingsWindow.ShowDialog();
+
+            if ((iranytevesztesSettingsWindow.directionNumberComboBox.SelectedIndex == -1) | (iranytevesztesSettingsWindow.gazeTimeDurationComboBox.SelectedIndex == -1))
+            {
+                return;
+            }
+
+            if (iranytevesztesSettingsWindow.cancelButtonPressed)
+            {
+                return;
+            }
+
+            if (iranytevesztesSettingsWindow.saveButtonPressed)
+            {
+                gazeNumber = int.Parse(iranytevesztesSettingsWindow.directionNumberComboBox.Text);
+                gazeTimeDuration = int.Parse(iranytevesztesSettingsWindow.gazeTimeDurationComboBox.Text);
+            }
         }
     }
 }

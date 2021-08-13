@@ -10,7 +10,7 @@
         Icon="{StaticResource icon}">
 
 
-    <Grid Background="#FF00A8FF">
+    <Grid Background="LightGray">
 
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="35" Height="35*"/>
@@ -36,10 +36,10 @@
         <ComboBox x:Name="gazeTimeDurationComboBox" Grid.Row="1" Grid.Column="1"
                HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,5" />
 
-        <Button x:Name="saveButton" Grid.Row="2" Grid.Column="1" Content="Mentés" Height="30"
+        <Button x:Name="saveButton" Grid.Row="2" Grid.Column="1" Content="Mentés" Height="30" Click="SaveButton_Click"
                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,95,5" Width="80" />
 
-        <Button x:Name="cancelButton" Grid.Row="2" Grid.Column="1" Content="Mégse" Height="30"
+        <Button x:Name="cancelButton" Grid.Row="2" Grid.Column="1" Content="Mégse" Height="30" Click="CancelButton_Click"
                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,5,5" Width="80" />
 
     </Grid>

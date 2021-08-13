@@ -15,7 +15,7 @@ namespace SkillTest
         // Click the Iranytevesztes_vizsgalat_Button
         private void Iranyteveztes_vizsgalat_Button_Click(object sender, RoutedEventArgs e)
         {
-            IranytevesztesWindow iranytevesztesWindow = new IranytevesztesWindow();
+            IranytevesztesWindow iranytevesztesWindow = new IranytevesztesWindow(5, 1);
 
             // Open the IranytevesztesWindow
             iranytevesztesWindow.ShowDialog();
