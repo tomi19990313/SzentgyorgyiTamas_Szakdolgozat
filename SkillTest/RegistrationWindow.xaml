@@ -1,0 +1,58 @@
+﻿<Window x:Class="SkillTest.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Regisztráció"
+        Height="600" Width="500" MinHeight="450" MinWidth="450" MaxHeight="800" MaxWidth="600"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="Gray">
+
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="150" Height="150"/>
+            <RowDefinition MinHeight="35" Height="35*"/>
+            <RowDefinition MinHeight="35" Height="35*"/>
+            <RowDefinition MinHeight="35" Height="35*"/>
+            <RowDefinition MinHeight="35" Height="35*"/>
+            <RowDefinition MinHeight="35" Height="35*"/>
+        </Grid.RowDefinitions>
+
+
+        <Label x:Name="registrationLabel" Content="Regisztráció " Grid.Row="0"
+               HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5" FontWeight="Bold"
+               FontSize="35" Foreground="White"/>
+
+        <StackPanel Grid.Row="1" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox x:Name="userNameBox" materialDesign:HintAssist.Hint="Felhasználónév"
+                     Foreground="White" Background="Transparent" Margin="0,0,0,0"
+                     FontSize="16" VerticalAlignment="Center" Opacity="0.5" Width="350"
+                     HorizontalContentAlignment="Left" BorderThickness="2" BorderBrush="White" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox x:Name="passwordBox" materialDesign:HintAssist.Hint="Jelszó"
+                     Foreground="White" Background="Transparent" Margin="0,0,0,0"
+                     FontSize="16" VerticalAlignment="Center" Opacity="0.5" Width="350"
+                     HorizontalContentAlignment="Left" BorderThickness="2" BorderBrush="White" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox x:Name="passwordAgainBox" materialDesign:HintAssist.Hint="Jelszó újra"
+                     Foreground="White" Background="Transparent" Margin="0,0,0,0"
+                     FontSize="16" VerticalAlignment="Center" Opacity="0.5" Width="350"
+                     HorizontalContentAlignment="Left" BorderThickness="2" BorderBrush="White" />
+        </StackPanel>
+
+        <Button x:Name="registrationButton" Grid.Row="4" Content="Regisztrálás" Height="30" Background="Transparent" BorderThickness="2"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10,10,10" Width="120" 
+                BorderBrush="Black" />
+
+        <Button x:Name="backButton" Grid.Row="5" Content="Mégse" Height="30" Background="Transparent" BorderThickness="2"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10" Width="120" 
+                BorderBrush="Black" />
+    </Grid>
+</Window>

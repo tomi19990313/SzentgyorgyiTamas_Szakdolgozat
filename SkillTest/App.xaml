@@ -1,13 +1,19 @@
 ﻿<Application x:Class="SkillTest.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Login.xaml">
     
     <Application.Resources>
         <ResourceDictionary>
+
             <BitmapImage x:Key="arrow" UriSource="images/arrow.png"></BitmapImage>
             <BitmapImage x:Key="icon" UriSource="images/icon.ico"></BitmapImage>
             <BitmapImage x:Key="iranytevesztes_button" UriSource="images/iranytevesztes_button.png"></BitmapImage>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </Application.Resources>
     
