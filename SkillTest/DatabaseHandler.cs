@@ -2,7 +2,7 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Threading.Tasks;
-
+using System.Windows;
 
 namespace SkillTest
 {
@@ -45,6 +45,31 @@ namespace SkillTest
             catch
             {
                 return await Task.FromResult<bool>(false);
+            }
+        }
+
+
+
+        public async Task<SetResponse> RegistrateUser(string userName, string password)
+        {
+            FirebaseResponse userCheck = await client.GetTaskAsync("users/" + userName);
+
+            try
+            {
+                User user = userCheck.ResultAs<User>();
+
+                MessageBox.Show("Ez a felhasználónév már foglalt!");
+                return null;
+            }
+            catch
+            {
+                registrationWriter newUser = new registrationWriter
+                {
+                    Password = password
+                };
+
+
+                return await client.SetTaskAsync("users/" + userName, newUser);
             }
         }
     }

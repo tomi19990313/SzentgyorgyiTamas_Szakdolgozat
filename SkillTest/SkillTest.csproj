@@ -112,6 +112,7 @@
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="registrationWriter.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="User.cs" />
     <Page Include="IranytevesztesResultWindow.xaml">

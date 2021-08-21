@@ -49,7 +49,7 @@
 
         <Button x:Name="registrationButton" Grid.Row="4" Content="Regisztrálás" Height="30" Background="Transparent" BorderThickness="2"
                 HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10,10,10" Width="120" 
-                BorderBrush="Black" />
+                BorderBrush="Black" Click="registrationButton_Click" />
 
         <Button x:Name="backButton" Grid.Row="5" Content="Mégse" Height="30" Background="Transparent" BorderThickness="2"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10" Width="120" 

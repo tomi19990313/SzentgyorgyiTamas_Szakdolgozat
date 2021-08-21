@@ -1,8 +1,7 @@
 ﻿namespace SkillTest
 {
-    class User
+    internal class registrationWriter
     {
-        public string UserName { get; set; }
         public string Password { get; set; }
     }
 }
