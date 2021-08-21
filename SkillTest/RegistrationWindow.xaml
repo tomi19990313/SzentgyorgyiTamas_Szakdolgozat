@@ -53,6 +53,6 @@
 
         <Button x:Name="backButton" Grid.Row="5" Content="Mégse" Height="30" Background="Transparent" BorderThickness="2"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10" Width="120" 
-                BorderBrush="Black" />
+                BorderBrush="Black" Click="backButton_Click" />
     </Grid>
 </Window>

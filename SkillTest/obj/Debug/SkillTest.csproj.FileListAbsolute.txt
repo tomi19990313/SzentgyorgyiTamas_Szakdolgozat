@@ -32,3 +32,9 @@ C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\Skill
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\SkillTest.csproj.AssemblyReference.cache
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\RegistrationWindow.baml
 C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\obj\Debug\RegistrationWindow.g.cs
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\FireSharp.dll
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\RestSharp.dll
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tamás\Documents\Saját\szakdoga\SzentgyörgyiTamás_Szakdolgozat\SkillTest\bin\Debug\RestSharp.xml

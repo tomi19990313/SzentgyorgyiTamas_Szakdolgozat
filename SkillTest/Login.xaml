@@ -37,18 +37,18 @@
         <StackPanel Grid.Row="2" Margin="10,10,10,10" Orientation="Horizontal" HorizontalAlignment="Center">
             <materialDesign:PackIcon Kind="Password" Width="30" Height="30" Foreground="White" VerticalAlignment="Center"/>
 
-            <TextBox x:Name="passwordBox" materialDesign:HintAssist.Hint="Jelszó"
+            <PasswordBox x:Name="passwordBox" materialDesign:HintAssist.Hint="Jelszó"
                      Foreground="White" Background="Transparent" Margin="0,0,0,0"
                      FontSize="16" VerticalAlignment="Center" Opacity="0.5" Width="250"
                      HorizontalContentAlignment="Center" BorderThickness="0,0,0,2" BorderBrush="White" />
         </StackPanel>
 
-        <Button x:Name="openButton" Grid.Row="3" Content="Belépés" Height="30" Background="Transparent" BorderThickness="2"
+        <Button x:Name="loginButton" Grid.Row="3" Content="Belépés" Height="30" Background="Transparent" BorderThickness="2"
                 HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,10,10,10" Width="120" 
-                BorderBrush="Black" />
+                BorderBrush="Black" Click="loginButton_Click" />
 
         <Button x:Name="registrationButton" Grid.Row="4" Content="Regisztráció" Height="30" Background="Transparent"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10" Width="120" BorderThickness="2"
-                BorderBrush="Black" />
+                BorderBrush="Black" Click="registrationButton_Click"/>
     </Grid>
 </Window>

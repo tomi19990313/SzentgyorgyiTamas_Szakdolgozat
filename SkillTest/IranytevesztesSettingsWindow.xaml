@@ -31,10 +31,22 @@
                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5" FontWeight="Bold" />
 
         <ComboBox x:Name="directionNumberComboBox" Grid.Row="0" Grid.Column="1"
-               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,5" />
+               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5" Background="White" >
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Background" Value="White" />
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
 
         <ComboBox x:Name="gazeTimeDurationComboBox" Grid.Row="1" Grid.Column="1"
-               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,5" />
+               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5" Background="White" >
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Background" Value="White" />
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
 
         <Button x:Name="saveButton" Grid.Row="2" Grid.Column="1" Content="Mentés" Height="30" Click="SaveButton_Click"
                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,95,5" Width="80" />
