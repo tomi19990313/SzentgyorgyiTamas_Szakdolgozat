@@ -97,6 +97,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DatabaseHandler.cs" />
+    <Compile Include="IranytevesztesResultsWindow.xaml.cs">
+      <DependentUpon>IranytevesztesResultsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IranytevesztesResultWindow.xaml.cs">
       <DependentUpon>IranytevesztesResultWindow.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
     <Compile Include="registrationWriter.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="User.cs" />
+    <Page Include="IranytevesztesResultsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IranytevesztesResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

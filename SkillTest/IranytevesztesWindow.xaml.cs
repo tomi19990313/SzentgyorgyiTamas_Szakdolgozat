@@ -13,15 +13,17 @@ namespace SkillTest
         private int CurrentGazeNumber;  // The serial number of the actual gaze
         private int gazeNumber;         // Gaze repetition number
         private int gazeTimeDuration;   // Time for one gaze (mp)
+        private string User;
 
 
 
-        public IranytevesztesWindow(int gazeNumber, int gazeTimeDuration)
+        public IranytevesztesWindow(int gazeNumber, int gazeTimeDuration, string user)
         {
             InitializeComponent();
 
             this.gazeNumber = gazeNumber;
             this.gazeTimeDuration = gazeTimeDuration;
+            this.User = user;
 
             Settings();  // Setting the parameters
         }
@@ -212,6 +214,16 @@ namespace SkillTest
                 gazeNumber = int.Parse(iranytevesztesSettingsWindow.directionNumberComboBox.Text);
                 gazeTimeDuration = int.Parse(iranytevesztesSettingsWindow.gazeTimeDurationComboBox.Text);
             }
+        }
+
+
+
+        // Click the ResultsButton
+        private void ResultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            IranytevesztesResultsWindow iranytevesztesResultsWindow = new IranytevesztesResultsWindow(User);
+
+            iranytevesztesResultsWindow.ShowDialog();
         }
     }
 }

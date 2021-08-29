@@ -27,10 +27,11 @@ namespace SkillTest
 
             if (await databaseHandler.Login(userNameBox.Text, passwordBox.Password))
             {
+                string user = userNameBox.Text;
                 userNameBox.Clear();
                 passwordBox.Clear();
 
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(user);
 
                 this.Hide();
                 mainWindow.ShowDialog();

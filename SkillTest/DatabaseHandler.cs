@@ -1,12 +1,14 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace SkillTest
 {
-    class DatabaseHandler
+    internal class DatabaseHandler
     {
         private readonly IFirebaseConfig config;
         private readonly IFirebaseClient client;
@@ -71,6 +73,18 @@ namespace SkillTest
 
                 return await client.SetTaskAsync("users/" + userName, newUser);
             }
+        }
+
+
+
+        public async Task<JObject> getResults(string userName)
+        {
+            FirebaseResponse res = await client.GetTaskAsync("results/" + userName);
+
+            JObject children = JObject.Parse(res.Body);
+
+
+            return children;
         }
     }
 }

@@ -5,9 +5,12 @@ namespace SkillTest
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        string User;
+        public MainWindow(string user)
         {
             InitializeComponent();
+
+            User = user;
         }
 
 
@@ -15,7 +18,8 @@ namespace SkillTest
         // Click the Iranytevesztes_vizsgalat_Button
         private void Iranyteveztes_vizsgalat_Button_Click(object sender, RoutedEventArgs e)
         {
-            IranytevesztesWindow iranytevesztesWindow = new IranytevesztesWindow(5, 1);
+            System.Console.WriteLine(User);
+            IranytevesztesWindow iranytevesztesWindow = new IranytevesztesWindow(5, 1, User);
 
             // Open the IranytevesztesWindow
             iranytevesztesWindow.ShowDialog();

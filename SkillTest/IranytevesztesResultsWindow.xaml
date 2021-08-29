@@ -1,0 +1,26 @@
+﻿<Window x:Class="SkillTest.IranytevesztesResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Iránytévesztés teszt eredmények" 
+        Height="450" Width="800" WindowState="Maximized"
+        ResizeMode="NoResize"
+        Background="#FF00A8FF"
+        Icon="{StaticResource icon}">
+
+    <Window.Resources>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+        <StackPanel x:Name="ResultStackPanel" Orientation="Vertical" Margin="10" >
+            <Label HorizontalAlignment="Center" HorizontalContentAlignment="Center" 
+               Content="Iránytévesztés teszt eredmények" FontSize="30" FontWeight="Bold" Margin="0,0,0,50"/>
+        </StackPanel>
+    </ScrollViewer>
+    
+</Window>

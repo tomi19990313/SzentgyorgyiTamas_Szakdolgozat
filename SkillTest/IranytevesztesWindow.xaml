@@ -6,7 +6,7 @@
         xmlns:wpf="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
         mc:Ignorable="d"
         Title="Iránytévesztés vizsgálat" 
-        MinHeight="450" MinWidth="400" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
+        MinHeight="450" MinWidth="450" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
         Icon="{StaticResource icon}">
 
     <Window.Resources>
@@ -101,8 +101,12 @@
             <Button x:Name="MenuButton" Content="Főoldal" Click="MenuButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="2.5 cm" MinHeight="1 cm"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,30,0" Width="2.8 cm" Height="1 cm">
-            <Button x:Name="SettingsButton" Content="Beállítások" Click="SettingsButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="2.8 cm" MinHeight="1 cm"/>
+        <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,30,0" Width="3 cm" Height="1 cm">
+            <Button x:Name="SettingsButton" Content="Beállítások" Click="SettingsButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="3 cm" MinHeight="1 cm"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,0" Width="3 cm" Height="1 cm">
+            <Button x:Name="ResultsButton" Content="Eredmények" Click="ResultsButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="3 cm" MinHeight="1 cm"/>
         </Viewbox>
     </Grid>
 
