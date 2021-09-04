@@ -1,4 +1,7 @@
-﻿namespace SkillTest
+﻿// registrationWriter class for help the registration process
+
+
+namespace SkillTest
 {
     internal class registrationWriter
     {

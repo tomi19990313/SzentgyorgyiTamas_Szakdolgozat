@@ -34,7 +34,13 @@
                 <Image Source="{StaticResource iranytevesztes_button}"/>
             </Button>
         </Viewbox>
-        
+
+        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Name="signOut_Button" MinWidth="1 cm" MinHeight="1 cm" 
+                Click="signOutButton_Click" Content="Kijelentkezés" 
+                BorderThickness="4" FontSize="18" Width="4 cm" Height="1 cm" 
+                Background="LightGray" BorderBrush="Black" Margin="0,0,20,0" />
+
     </Grid>
     
 </Window>

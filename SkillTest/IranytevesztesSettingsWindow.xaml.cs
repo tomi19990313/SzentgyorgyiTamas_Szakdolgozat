@@ -6,18 +6,18 @@ namespace SkillTest
     public partial class IranytevesztesSettingsWindow : Window
     {
 
-        private int[] directionNumberArray;
-        private int[] gazeTimeDurationArray;
+        private int[] directionNumberArray;   // Directions from 1 to 30
+        private int[] gazeTimeDurationArray;  // Gaze time from 1 to 5
         public bool saveButtonPressed;
         public bool cancelButtonPressed;
 
 
-        public IranytevesztesSettingsWindow()
+        public IranytevesztesSettingsWindow(int gazeNumber, int gazeTimeDuration)
         {
             InitializeComponent();
 
             FillUpArrays();
-            FillUpComboBoxes();
+            FillUpComboBoxes(gazeNumber, gazeTimeDuration);
 
             // Set default values
             saveButtonPressed = false;
@@ -46,10 +46,14 @@ namespace SkillTest
 
 
         // Add the array values to the combo boxes
-        private void FillUpComboBoxes()
+        private void FillUpComboBoxes(int gazeNumber, int gazeTimeDuration)
         {
             directionNumberComboBox.ItemsSource = directionNumberArray;
             gazeTimeDurationComboBox.ItemsSource = gazeTimeDurationArray;
+
+            // Display the current values
+            directionNumberComboBox.SelectedItem = gazeNumber;
+            gazeTimeDurationComboBox.SelectedItem = gazeTimeDuration;
         }
 
 

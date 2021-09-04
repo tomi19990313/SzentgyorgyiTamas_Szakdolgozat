@@ -19,7 +19,9 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" >
         <StackPanel x:Name="ResultStackPanel" Orientation="Vertical" Margin="10" >
             <Label HorizontalAlignment="Center" HorizontalContentAlignment="Center" 
-               Content="Iránytévesztés teszt eredmények" FontSize="30" FontWeight="Bold" Margin="0,0,0,50"/>
+               Content="Iránytévesztés teszt eredmények" FontSize="30" FontWeight="Bold" Margin="0,0,0,20"/>
+            <Button x:Name="closeButton" HorizontalAlignment="Right" Content="Bezárás" Margin="0,0,0,20" Click="closeButton_Click"
+                    BorderThickness="4" FontSize="18" Width="3 cm" Height="1 cm" Background="#FF00A8FF" BorderBrush="Black" />
         </StackPanel>
     </ScrollViewer>
     

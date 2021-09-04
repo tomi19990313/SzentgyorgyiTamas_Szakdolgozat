@@ -5,7 +5,7 @@ namespace SkillTest
 {
     public partial class Login : Window
     {
-        DatabaseHandler databaseHandler;
+        DatabaseHandler databaseHandler;  // DatabaseHandler object
 
 
         public Login()
@@ -25,7 +25,7 @@ namespace SkillTest
                 return;
             }
 
-            if (await databaseHandler.Login(userNameBox.Text, passwordBox.Password))
+            if (await databaseHandler.Login(userNameBox.Text, passwordBox.Password))  // Check the user
             {
                 string user = userNameBox.Text;
                 userNameBox.Clear();
@@ -33,9 +33,10 @@ namespace SkillTest
 
                 MainWindow mainWindow = new MainWindow(user);
 
+                mainWindow.Owner = this;
+
                 this.Hide();
                 mainWindow.ShowDialog();
-                this.Show();
             }
             else
             {
@@ -46,6 +47,7 @@ namespace SkillTest
 
 
 
+        // Click the registrationButton
         private void registrationButton_Click(object sender, RoutedEventArgs e)
         {
             userNameBox.Clear();

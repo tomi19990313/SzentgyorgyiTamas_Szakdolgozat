@@ -1,4 +1,7 @@
-﻿namespace SkillTest
+﻿// User class for representing the user
+
+
+namespace SkillTest
 {
     class User
     {

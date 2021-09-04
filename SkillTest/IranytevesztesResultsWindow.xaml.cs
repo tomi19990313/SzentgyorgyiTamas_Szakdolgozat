@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+
 
 namespace SkillTest
 {
@@ -22,9 +22,20 @@ namespace SkillTest
 
 
 
+        // Get and display the results of a current user
         private async void getResults()
         {
-            JObject children = await databaseHandler.getResults(User);
+            JObject children;
+
+            try  // If a result is already exists
+            {
+                children = await databaseHandler.getResults(User);
+            }
+            catch  // If a result is not exists yet
+            {
+                return;
+            }
+            
 
             foreach (KeyValuePair<string, JToken> child in children)
             {
@@ -63,6 +74,14 @@ namespace SkillTest
                     }
                 }
             }
+        }
+
+
+
+        // Click the closeButton
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

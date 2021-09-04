@@ -195,7 +195,7 @@ namespace SkillTest
         // Setting the parameters
         private void Settings()
         {
-            IranytevesztesSettingsWindow iranytevesztesSettingsWindow = new IranytevesztesSettingsWindow();
+            IranytevesztesSettingsWindow iranytevesztesSettingsWindow = new IranytevesztesSettingsWindow(gazeNumber, gazeTimeDuration);
 
             iranytevesztesSettingsWindow.ShowDialog();
 

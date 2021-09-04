@@ -49,10 +49,12 @@
         </ComboBox>
 
         <Button x:Name="saveButton" Grid.Row="2" Grid.Column="1" Content="Mentés" Height="30" Click="SaveButton_Click"
-               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,95,5" Width="80" />
+                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,95,5" Width="80" 
+                BorderBrush="Black" BorderThickness="2" />
 
         <Button x:Name="cancelButton" Grid.Row="2" Grid.Column="1" Content="Mégse" Height="30" Click="CancelButton_Click"
-               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,5,5" Width="80" />
+                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,5,5" Width="80" 
+                BorderBrush="Black" BorderThickness="2" />
 
     </Grid>
     
