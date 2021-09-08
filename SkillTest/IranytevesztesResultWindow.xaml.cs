@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using FireSharp.Response;
+using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System;
 
 
 namespace SkillTest
@@ -11,14 +13,18 @@ namespace SkillTest
         private FlowDocument flowDoc = new FlowDocument();
         private Table resultTable = new Table();
         private Result Result;
+        private string User;
+        private string Child;
 
 
 
-        public IranytevesztesResultWindow(Result Result)
+        public IranytevesztesResultWindow(Result Result, string user, string child)
         {
             InitializeComponent();
 
             this.Result = Result;
+            this.User = user;
+            this.Child = child;
 
             resultTable.CellSpacing = 5;
             resultTable.LineHeight = 30;
@@ -27,8 +33,9 @@ namespace SkillTest
             flowDoc.ColumnWidth = 1000;
             this.AddChild(flowDoc);
 
-            DisplayResultTable();  // Display the result table
-            FillUpResultTable();   // Fill up the result table with the results, and the point
+            DisplayResultTable();       // Display the result table
+            FillUpResultTable();        // Fill up the result table with the results, and the point
+            SaveResultsIntoDatabase();  // Save the results into the database
         }
 
 
@@ -178,6 +185,28 @@ namespace SkillTest
             currentRow.Cells[Result.GazeNumber + 1].BorderBrush = Brushes.Gray;
             currentRow.Cells[Result.GazeNumber + 1].FontSize = 16;
             currentRow.Cells[Result.GazeNumber + 1].FontWeight = FontWeights.Bold;
+        }
+
+
+
+        // Save the results into the database
+        private async void SaveResultsIntoDatabase()
+        {
+            string testResult = Result.GazeNumber.ToString() + '/' + Result.getNumericResult().ToString();
+
+            DatabaseHandler databaseHandler = new DatabaseHandler();
+
+            SetResponse response = null;
+            response = await databaseHandler.SaveResults(this.User, this.Child, "Iránytévesztés", testResult);
+
+            if (response != null)  // If the save vas successful
+            {
+                MessageBox.Show("Eredmény elmentve!");
+            }
+            else
+            {
+                MessageBox.Show("Ez nem sikerült!");
+            }
         }
     }
 }

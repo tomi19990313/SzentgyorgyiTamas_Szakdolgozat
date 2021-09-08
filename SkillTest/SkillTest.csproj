@@ -117,6 +117,9 @@
     </Compile>
     <Compile Include="registrationWriter.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="SetUser.xaml.cs">
+      <DependentUpon>SetUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Page Include="IranytevesztesResultsWindow.xaml">
       <SubType>Designer</SubType>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

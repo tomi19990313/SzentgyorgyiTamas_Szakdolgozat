@@ -14,6 +14,7 @@ namespace SkillTest
         private int gazeNumber;         // Gaze repetition number
         private int gazeTimeDuration;   // Time for one gaze (mp)
         private string User;
+        private string Child;
 
 
 
@@ -24,6 +25,7 @@ namespace SkillTest
             this.gazeNumber = gazeNumber;
             this.gazeTimeDuration = gazeTimeDuration;
             this.User = user;
+            this.Child = "";
 
             Settings();  // Setting the parameters
         }
@@ -33,10 +35,24 @@ namespace SkillTest
         // Click the StartButton
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            CreateNewResult(gazeNumber);  // Create a new Result object, and fill the CorrectResults array
-            SetTimer(gazeTimeDuration);   // Set Timer
+            SetUser setUser = new SetUser(this.User);
 
-            this.Timer.Start();
+            setUser.ShowDialog();
+
+            if (setUser.cancelButtonPressed)
+            {
+                return;
+            }
+
+            if (setUser.saveButtonPressed)
+            {
+                this.Child = setUser.childTextBox.Text;
+                
+                CreateNewResult(gazeNumber);  // Create a new Result object, and fill the CorrectResults array
+                SetTimer(gazeTimeDuration);   // Set Timer
+
+                this.Timer.Start();
+            }
         }
 
 
@@ -150,7 +166,7 @@ namespace SkillTest
         // Function for displaying the result at the end of the test
         private void DisplayTestResult()
         {
-            IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result);
+            IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result, this.User, this.Child);
 
             iranytevesztesResult.ShowDialog();
         }

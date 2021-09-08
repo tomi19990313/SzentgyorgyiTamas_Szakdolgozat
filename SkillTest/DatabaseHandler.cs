@@ -4,7 +4,8 @@ using FireSharp.Response;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-
+using System;
+using System.Collections.Generic;
 
 namespace SkillTest
 {
@@ -88,6 +89,38 @@ namespace SkillTest
             JObject children = JObject.Parse(res.Body);
 
             return children;
+        }
+
+
+
+        // Save the results into the database
+        public async Task<SetResponse> SaveResults(string userName, string child, string testType, string result)
+        {
+            FirebaseResponse res = await client.GetTaskAsync("results/" + userName + "/" + child);
+
+            JObject tests = JObject.Parse(res.Body);
+
+            foreach (KeyValuePair<string, JToken> test in tests)
+            {
+                if (test.Key.ToString() == testType)
+                {
+                    string results = test.Value.ToString();
+                    results += ('*' + result);
+
+                    if (testType == "Iránytévesztés")
+                    {
+                        var newResult = new { Iránytévesztés = results };
+                        return await client.SetTaskAsync("results/" + userName + "/" + child + "/", newResult);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+
+            var totalyNewResult = new { Iránytévesztés = result };
+            return await client.SetTaskAsync("results/" + userName + "/" + child + "/", totalyNewResult);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace SkillTest
             {
                 return;
             }
-            
 
             foreach (KeyValuePair<string, JToken> child in children)
             {
@@ -51,24 +50,19 @@ namespace SkillTest
                 foreach (KeyValuePair<string, JToken> test in (JObject)testTypes)
                 {
                     string testType = test.Key;
-                    JToken dates = test.Value;
+                    string results = test.Value.ToString();
+                    string[] resultsArray = results.Split('*');
 
                     if (testType == "Iránytévesztés")
                     {
                         ResultStackPanel.Children.Add(childNameLabel);
-                    }
 
-                    foreach (KeyValuePair<string, JToken> results in (JObject)dates)
-                    {
-                        string resultDate = results.Key;
-                        string result = results.Value.ToString();
-
-                        if (testType == "Iránytévesztés")
+                        foreach (var result in resultsArray)
                         {
                             Label resultLabel = new Label();
                             resultLabel.FontSize = 16;
                             resultLabel.Margin = new Thickness(30, 0, 0, 0);
-                            resultLabel.Content = resultDate + ":  " + result;
+                            resultLabel.Content = result;
                             ResultStackPanel.Children.Add(resultLabel);
                         }
                     }
