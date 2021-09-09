@@ -82,6 +82,20 @@ namespace SkillTest
 
 
 
+        // Registrate child
+        public async Task<SetResponse> RegistrateChild(string userName, string childName, string id)
+        {
+            childRegistrationWriter newChild = new childRegistrationWriter
+            {
+                ID = id
+            };
+
+
+            return await client.SetTaskAsync("results/" + userName + "/" + childName, newChild);
+        }
+
+
+
         // Get the results of a user
         public async Task<JObject> getResults(string userName)
         {

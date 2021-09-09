@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
-using System;
 
 
 namespace SkillTest

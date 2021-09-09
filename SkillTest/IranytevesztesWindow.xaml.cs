@@ -241,5 +241,15 @@ namespace SkillTest
 
             iranytevesztesResultsWindow.ShowDialog();
         }
+
+
+
+        // Click the NewChildButton
+        private void NewChildButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewChild newChild = new NewChild(User);
+
+            newChild.ShowDialog();
+        }
     }
 }

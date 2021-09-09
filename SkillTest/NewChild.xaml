@@ -1,0 +1,40 @@
+﻿<Window x:Class="SkillTest.NewChild"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Új gyermek felvétele/módosítása"
+        Height="450" Width="800" WindowState="Maximized"
+        ResizeMode="NoResize"
+        Background="#FF00A8FF"
+        Icon="{StaticResource icon}" >
+
+    <Window.Resources>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+        
+        <StackPanel x:Name="ChildrenStackPanel" Orientation="Vertical" Margin="10" >
+            
+            <Label HorizontalAlignment="Center" HorizontalContentAlignment="Center" 
+               Content="Gyerekek, és azonosítóik" FontSize="30" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <StackPanel x:Name="ButtonsStackPanel" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+
+                <Button x:Name="newChildButton" Content="Új gyermek" Margin="0,0,40,40" Click="newChildButton_Click"
+                    BorderThickness="4" FontSize="18" Width="4 cm" Height="1 cm" Background="#FF00A8FF" BorderBrush="Black" />
+
+                <Button x:Name="closeButton" Content="Bezárás" Margin="40,0,0,40" Click="closeButton_Click"
+                    BorderThickness="4" FontSize="18" Width="4 cm" Height="1 cm" Background="#FF00A8FF" BorderBrush="Black" />
+
+            </StackPanel>
+
+        </StackPanel>
+        
+    </ScrollViewer>
+    
+</Window>

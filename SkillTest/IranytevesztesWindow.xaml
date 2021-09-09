@@ -108,6 +108,10 @@
         <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,0" Width="3.5 cm" Height="1 cm">
             <Button x:Name="ResultsButton" Content="Eredmények" Click="ResultsButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="3.5 cm" MinHeight="1 cm"/>
         </Viewbox>
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Width="3.5 cm" Height="1 cm">
+            <Button x:Name="newChildButton" Content="Új gyermek" Click="NewChildButton_Click" FontSize="18" Background="#FF00A8FF" BorderBrush="Black" BorderThickness="4" Padding="5" MinWidth="3.5 cm" MinHeight="1 cm"/>
+        </Viewbox>
     </Grid>
 
 </Window>
