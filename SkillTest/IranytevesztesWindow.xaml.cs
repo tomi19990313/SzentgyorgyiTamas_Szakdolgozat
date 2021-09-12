@@ -13,8 +13,8 @@ namespace SkillTest
         private int CurrentGazeNumber;  // The serial number of the actual gaze
         private int gazeNumber;         // Gaze repetition number
         private int gazeTimeDuration;   // Time for one gaze (mp)
-        private string User;
-        private string Child;
+        private string User;            // Teacher user
+        private string Child;           // Child to test
 
 
 

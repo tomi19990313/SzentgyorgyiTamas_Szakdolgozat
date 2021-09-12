@@ -20,7 +20,7 @@ namespace SkillTest
 
 
         // Click the saveButton
-        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             if ((this.childNameTextBox.Text.Length == 0) || (this.childIDTextBox.Text.Length == 0)) // If a textbox is empty
             {

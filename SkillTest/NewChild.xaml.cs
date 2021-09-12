@@ -12,7 +12,6 @@ namespace SkillTest
         DatabaseHandler databaseHandler = new DatabaseHandler();
         string User;
 
-
         public NewChild(string user)
         {
             InitializeComponent();
@@ -95,7 +94,7 @@ namespace SkillTest
                 SetResponse response = null;
                 response = await databaseHandler.RegistrateChild(this.User, addChild.childNameTextBox.Text, addChild.childIDTextBox.Text);
 
-                if (response != null)  // If the id changed successfully
+                if (response != null)  // If the id added or changed successfully
                 {
                     MessageBox.Show("Sikeres regisztráció!");
                     this.Close();

@@ -6,7 +6,7 @@ namespace SkillTest
     public partial class IranytevesztesSettingsWindow : Window
     {
 
-        private int[] directionNumberArray;   // Directions from 1 to 30
+        private int[] directionNumberArray;   // Directions from 5 to 15
         private int[] gazeTimeDurationArray;  // Gaze time from 1 to 5
         public bool saveButtonPressed;
         public bool cancelButtonPressed;
@@ -29,12 +29,12 @@ namespace SkillTest
         // Fill up the arrays what will be in the combo boxes
         private void FillUpArrays()
         {
-            directionNumberArray = new int[30];
+            directionNumberArray = new int[11];
             gazeTimeDurationArray = new int[5];
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 11; i++)
             {
-                directionNumberArray[i] = i + 1;
+                directionNumberArray[i] = i + 5;
             }
 
             for (int i = 0; i < 5; i++)
