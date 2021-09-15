@@ -55,10 +55,7 @@ namespace SkillTest
                     {
                         ID = test.Value.ToString();
                         childNameLabel.Content = childName + "  -  " + ID;
-                    }
 
-                    if (testType == "Iránytévesztés")
-                    {
                         ChildrenStackPanel.Children.Add(childNameLabel);
                     }
                 }
@@ -75,7 +72,7 @@ namespace SkillTest
 
 
 
-        // Click the closeButton
+        // Click the newChildButton
         private async void newChildButton_Click(object sender, RoutedEventArgs e)
         {
             AddChild addChild = new AddChild();
