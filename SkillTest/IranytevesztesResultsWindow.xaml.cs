@@ -51,7 +51,7 @@ namespace SkillTest
                 {
                     string testType = test.Key;
                     string results = test.Value.ToString();
-                    string[] resultsArray = results.Split('*');
+                    string[] resultsArray = results.Split('_');
 
                     if (testType == "Iránytévesztés")
                     {

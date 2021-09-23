@@ -21,8 +21,8 @@ namespace SkillTest
             config = new FirebaseConfig
             {
                 // Firebase database config variables
-                AuthSecret = "Qqb6EFq6SqsPE6IeUxq1Oi8iVl4Qs1zC04uRsiEC",
-                BasePath = "https://szentgyorgyitamas-szakdolgozat-default-rtdb.europe-west1.firebasedatabase.app/"
+                AuthSecret = "K4VnUigpt5m9CJmMTOchcpTWSDpNNBaDHhyWxskt",
+                BasePath = "https://szakdolgozat-szentgyorgyitamas-default-rtdb.firebaseio.com/"
             };
 
             client = new FireSharp.FirebaseClient(config);
@@ -119,7 +119,7 @@ namespace SkillTest
                 if (test.Key.ToString() == testType)
                 {
                     string results = test.Value.ToString();
-                    results += ('*' + result);
+                    results += ('_' + result);
 
                     if (testType == "Iránytévesztés")
                     {
