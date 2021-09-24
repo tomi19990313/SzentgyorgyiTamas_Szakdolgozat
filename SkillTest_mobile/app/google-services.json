@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "44974480726",
+    "firebase_url": "https://szakdolgozat-szentgyorgyitamas-default-rtdb.firebaseio.com",
+    "project_id": "szakdolgozat-szentgyorgyitamas",
+    "storage_bucket": "szakdolgozat-szentgyorgyitamas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44974480726:android:abd1d84344e7fbe4c18af7",
+        "android_client_info": {
+          "package_name": "com.example.skilltest_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44974480726-lg3f69ofll7b9b7h6dtvhhvpi7mt60k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR8iwmbLM80FNgJazh4LmTBBo1ohkj498"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44974480726-lg3f69ofll7b9b7h6dtvhhvpi7mt60k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
