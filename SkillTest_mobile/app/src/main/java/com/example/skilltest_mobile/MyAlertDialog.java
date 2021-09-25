@@ -1,3 +1,6 @@
+// Dialog to give an information window for the user, if something is wrong with the given values
+
+
 package com.example.skilltest_mobile;
 
 import android.app.AlertDialog;
@@ -11,8 +14,8 @@ import androidx.fragment.app.DialogFragment;
 
 
 public class MyAlertDialog extends DialogFragment {
-    String Title;
-    String Message;
+    String Title;    // Title text
+    String Message;  // Message text
 
     MyAlertDialog(String title, String message)
     {
@@ -22,6 +25,7 @@ public class MyAlertDialog extends DialogFragment {
 
 
 
+    // Display the window, and set the texts
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class MyAlertDialog extends DialogFragment {
         builder.setTitle(this.Title);
         builder.setMessage(this.Message);
 
+        // Listening for the "OK" button click
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) { }
         });

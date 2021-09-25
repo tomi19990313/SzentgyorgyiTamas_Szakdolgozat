@@ -36,7 +36,7 @@
             android:layout_height="177dp"
             android:layout_below="@+id/titleTextView"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/mobile_app_icon" />
+            app:srcCompat="@drawable/icon" />
 
         <EditText
             android:id="@+id/teacherNameEditText"

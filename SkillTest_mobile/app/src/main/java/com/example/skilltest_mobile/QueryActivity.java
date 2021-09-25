@@ -1,3 +1,6 @@
+// Second window to display the results
+
+
 package com.example.skilltest_mobile;
 
 import  androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +15,8 @@ import java.util.Map;
 
 
 public class QueryActivity extends AppCompatActivity {
-    private LinearLayout linearLayout;
-    private Button backButton;
+    private LinearLayout linearLayout;  // Layout object, to add gui elements from code
+    private Button backButton;          // Back button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class QueryActivity extends AppCompatActivity {
 
         this.showResults();
 
+        // Listening for the 'Vissza' button click
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,15 +39,19 @@ public class QueryActivity extends AppCompatActivity {
 
 
 
+    // Diapply the results from the received string
     public void showResults(){
         String param = "";
         Bundle extras = getIntent().getExtras();
 
         if (extras != null){
             param = extras.getString("param");
+
+            // Delete the '{', and '}' characters from the string
             param = param.replace("{", "");
             param = param.replace("}", "");
 
+            // Generate a map from the string
             Map<String, String> myMap = new HashMap<String, String>();
             String[] pairs = param.split(", ");
 
@@ -53,6 +61,7 @@ public class QueryActivity extends AppCompatActivity {
                 myMap.put(keyValue[0], keyValue[1]);
             }
 
+            // Iterate in a map, and display the values
             for(Map.Entry<String, String> entry : myMap.entrySet()){
                 if (!entry.getKey().equals("ID"))
                 {

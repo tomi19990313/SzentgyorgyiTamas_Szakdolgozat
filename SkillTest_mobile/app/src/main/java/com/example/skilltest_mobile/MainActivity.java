@@ -1,3 +1,6 @@
+// Main window to input the teacher, child, and child id
+
+
 package com.example.skilltest_mobile;
 
 import androidx.annotation.NonNull;
@@ -20,12 +23,12 @@ import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button QueryButton;
-    private EditText TeacherNameEditText;
-    private EditText ChildNameEditText;
-    private EditText ChildIDEditText;
-    private FirebaseDatabase FirDatabase;
-    private DatabaseReference DatabaseRef;
+    private Button QueryButton;             // Button for get the results
+    private EditText TeacherNameEditText;   // Teacher name
+    private EditText ChildNameEditText;     // Child name
+    private EditText ChildIDEditText;       // Child ID
+    private FirebaseDatabase FirDatabase;   // Database
+    private DatabaseReference DatabaseRef;  // Database reference
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         ChildNameEditText = (EditText) findViewById(R.id.childNameEditText);
         ChildIDEditText = (EditText) findViewById(R.id.childIDEditText);
         FirDatabase = com.google.firebase.database.FirebaseDatabase.getInstance();
-        DatabaseRef = FirDatabase.getReference("results");
+        DatabaseRef = FirDatabase.getReference("results");  // Database reference to the 'results' tree element
 
+        // Listening for the 'Lekérdezés' button click
         QueryButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -51,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    // Check the values, and open the result window
     public void openQueryWindow() {
+        // If not all the required values was given
         if ((this.ChildNameEditText.getText().length() == 0) || (this.ChildIDEditText.getText().length() == 0) || (this.TeacherNameEditText.getText().length() == 0))
         {
             DialogFragment myAlertDialog = new MyAlertDialog("Hiányzó adatok", "Töltsön ki minden mezőt!");
@@ -60,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Check the given values from the database
         check(this.TeacherNameEditText.getText().toString() , this.ChildNameEditText.getText().toString(), this.ChildIDEditText.getText().toString(), this.TeacherNameEditText, this.ChildNameEditText, this.ChildIDEditText, new InterfaceForCheck() {
 
+            // If the values are correct -> Open QueryActivity
             @Override
             public void successful(Map<String, String> resultMap) {
                 QueryActivity queryActivity = new QueryActivity();
@@ -72,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(QueryIntent);
             }
 
+            // If the values are not correct
             @Override
             public void failure() {
                 DialogFragment myAlertDialog = new MyAlertDialog("Helytelen adatok", "Nem található gyerek ilyen adatokkal!");
@@ -82,8 +91,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    // Function for checking the given values from the database
     public void check(final String teacher, final String child, final String childID, EditText teacherNameEditText, EditText childNameEditText, EditText childIDEditText, final InterfaceForCheck interfaceForCheck){
-        DatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {  // Get data 1 time
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -93,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     boolean autOK = (teachers.get(teacher).get(child).get("ID").equals(childID));
 
-                    if (autOK) {
+                    // Check the authentication
+                    if (autOK) {  // OK
                         Map<String, String> resultMap = new HashMap<String, String>();
                         Set<String> keys = teachers.get(teacher).get(child).keySet();
 
@@ -103,12 +114,13 @@ public class MainActivity extends AppCompatActivity {
                             resultMap.put(key, value);
                         }
 
+                        // Clear the EditTexts
                         teacherNameEditText.setText("");
                         childNameEditText.setText("");
                         childIDEditText.setText("");
 
                         interfaceForCheck.successful(resultMap);
-                    } else {
+                    } else {  // Not OK
                         interfaceForCheck.failure();
                     }
                 }
@@ -118,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            // Failure with the database
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 DialogFragment myAlertDialog = new MyAlertDialog("Hiba", "Adatbázis hiba!");
