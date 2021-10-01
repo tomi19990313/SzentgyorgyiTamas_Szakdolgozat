@@ -1,1 +1,0 @@
-# 2022_1_SzentgyörgyiTamás_Y4I7GS_Szakdolgozat_VP

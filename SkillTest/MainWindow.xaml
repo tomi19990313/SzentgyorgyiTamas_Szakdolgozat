@@ -30,13 +30,13 @@
             <Label x:Name="titleName" Content="Képesség vizsgálat" FontWeight="Bold" FontSize="5"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
             <Button Name="Iranytevesztes_vizsgalat_Button" MinWidth="1 cm" MinHeight="1 cm" BorderThickness="0" Click="Iranyteveztes_vizsgalat_Button_Click">
                 <Image Source="{StaticResource iranytevesztes_button}"/>
             </Button>
         </Viewbox>
 
-        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"
                 Name="signOut_Button" MinWidth="1 cm" MinHeight="1 cm" 
                 Click="signOutButton_Click" Content="Kijelentkezés" 
                 BorderThickness="4" FontSize="18" Width="4 cm" Height="1 cm" 
