@@ -44,9 +44,15 @@ namespace SkillTest
                 return;
             }
 
+            if (setUser.childrenComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nem lett gyermek kiválasztva!  (Lehet, hogy még nem regisztrált gyereket)", "Hiányzó érték!");
+                return;
+            }
+
             if (setUser.saveButtonPressed)
             {
-                this.Child = setUser.childTextBox.Text;
+                this.Child = setUser.childrenComboBox.Text;
                 
                 CreateNewResult(gazeNumber);  // Create a new Result object, and fill the CorrectResults array
                 SetTimer(gazeTimeDuration);   // Set Timer

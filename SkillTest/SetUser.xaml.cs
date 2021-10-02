@@ -7,62 +7,30 @@ namespace SkillTest
 {
     public partial class SetUser : Window
     {
+        private string[] childrenArray;
         public bool saveButtonPressed;
         public bool cancelButtonPressed;
-        private bool exists = false;
         private string User;
 
-        public SetUser(string child)
+
+        public SetUser(string user)
         {
             InitializeComponent();
 
-            this.User = child;
+            this.User = user;
 
             // Set default values
             saveButtonPressed = false;
             cancelButtonPressed = false;
+
+            fillUpChildrenComboBox();
         }
 
 
 
         // Click the saveButton
-        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.childTextBox.Text.Length == 0)  // If the textbox is empty
-            {
-                MessageBox.Show("Nem adott meg nevet!", "Hiányzó adat!");
-                return;
-            }
-
-            DatabaseHandler databaseHandler = new DatabaseHandler();
-            JObject children;
-
-            try  // If a user is already exists
-            {
-                children = await databaseHandler.getResults(this.User);
-            }
-            catch  // If a user is not exists yet
-            {
-                return;
-            }
-
-            foreach (KeyValuePair<string, JToken> child in children)
-            {
-                string childName = child.Key;
-
-                if (childName == this.childTextBox.Text)
-                {
-                    exists = true;
-                }
-            }
-
-            if (!exists)  // If the child is not exists
-            {
-                MessageBox.Show("Ilyen nevű gyermeket még nem regisztráltak!", "Hiányzó gyermek!");
-                return;
-            }
-
-
             saveButtonPressed = true;
             this.Close();
         }
@@ -74,6 +42,35 @@ namespace SkillTest
         {
             cancelButtonPressed = true;
             this.Close();
+        }
+
+
+
+        // Fill up the ChildrenComboBox with the User's children
+        private async void fillUpChildrenComboBox()
+        {
+            DatabaseHandler databaseHandler = new DatabaseHandler();
+            JObject children;
+
+            try  // If a user is already has a child
+            {
+                children = await databaseHandler.getResults(this.User);
+            }
+            catch  // If a user is not has a child yet
+            {
+                return;
+            }
+
+            childrenArray = new string[children.Count];
+
+            int i = 0;
+            foreach (KeyValuePair<string, JToken> child in children)
+            {
+                childrenArray[i] = child.Key;
+                i++;
+            }
+
+            childrenComboBox.ItemsSource = childrenArray;
         }
     }
 }

@@ -23,8 +23,14 @@
         <Label x:Name="childNameLabel" Content="Gyermek neve: " Grid.Row="0" Grid.Column="0" 
                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,20,5,5" FontWeight="Bold" />
 
-        <TextBox x:Name="childTextBox" Grid.Row="0" Grid.Column="1" Background="White" 
-                 HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,20,5,5" />
+        <ComboBox x:Name="childrenComboBox" Grid.Row="0" Grid.Column="1"
+               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,20,5,5" Background="White" >
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Background" Value="White" />
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
 
         <Button x:Name="saveButton" Grid.Row="2" Grid.Column="1" Content="Mentés" Height="30"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,95,5" Width="80" 
