@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Bejelentkezés" 
+        Title="Bejelentkezés"
+        Icon="{StaticResource icon}"
         Height="500" Width="400" MinHeight="450" MinWidth="350" MaxHeight="700" MaxWidth="600"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen">
