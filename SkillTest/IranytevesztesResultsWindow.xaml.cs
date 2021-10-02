@@ -59,10 +59,13 @@ namespace SkillTest
 
                         foreach (var result in resultsArray)
                         {
+                            string[] oneResultArray = result.Split('/');
+
                             Label resultLabel = new Label();
                             resultLabel.FontSize = 16;
                             resultLabel.Margin = new Thickness(30, 0, 0, 0);
-                            resultLabel.Content = result;
+                            resultLabel.Content = oneResultArray[0] + '/' + oneResultArray[1] + ",   Ismétlések időtartama (mp): " + oneResultArray[2];
+
                             ResultStackPanel.Children.Add(resultLabel);
                         }
                     }

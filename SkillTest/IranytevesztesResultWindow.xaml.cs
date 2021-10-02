@@ -14,16 +14,18 @@ namespace SkillTest
         private Result Result;
         private string User;
         private string Child;
+        private int gazeTimeDuration;
 
 
 
-        public IranytevesztesResultWindow(Result Result, string user, string child)
+        public IranytevesztesResultWindow(Result Result, string user, string child, int gazeTimeDuration)
         {
             InitializeComponent();
 
             this.Result = Result;
             this.User = user;
             this.Child = child;
+            this.gazeTimeDuration = gazeTimeDuration;
 
             resultTable.CellSpacing = 5;
             resultTable.LineHeight = 30;
@@ -191,7 +193,7 @@ namespace SkillTest
         // Save the results into the database
         private async void SaveResultsIntoDatabase()
         {
-            string testResult = Result.GazeNumber.ToString() + '/' + Result.getNumericResult().ToString();
+            string testResult = Result.GazeNumber.ToString() + '/' + Result.getNumericResult().ToString() + '/' + this.gazeTimeDuration.ToString();
 
             DatabaseHandler databaseHandler = new DatabaseHandler();
 

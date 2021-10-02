@@ -166,7 +166,7 @@ namespace SkillTest
         // Function for displaying the result at the end of the test
         private void DisplayTestResult()
         {
-            IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result, this.User, this.Child);
+            IranytevesztesResultWindow iranytevesztesResult = new IranytevesztesResultWindow(this.Result, this.User, this.Child, this.gazeTimeDuration);
 
             iranytevesztesResult.ShowDialog();
         }
