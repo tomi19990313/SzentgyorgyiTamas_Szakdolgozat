@@ -2,7 +2,7 @@
 
 ## _Képességteszt vizsgálat_
 
-Ez a szoftver szakdolgozat gyanánt készült el. Lehetőséget biztosít gyógypedagógusok részére, hogy vizsgálni tudják a gyerekek iránytévesztését, és kiszűrjék az esetleges problémás eseteket. Ezenfelül a szülők meg tudják tekinteni gyermekeik korábbi eredményeit.
+Ez a szoftver szakdolgozat céljából készült el. Lehetőséget biztosít gyógypedagógusok részére, hogy vizsgálni tudják a gyerekek iránytévesztését, és kiszűrjék az esetleges problémás eseteket. Ezenfelül a szülők meg tudják tekinteni gyermekeik korábbi eredményeit.
 
 ## Főbb feladatok
 
@@ -15,7 +15,7 @@ Ez a szoftver szakdolgozat gyanánt készült el. Lehetőséget biztosít gyógy
     - Vizsgálat futtatása
     - Korábbi teszt eredményeket a pedagógus vissza tudja nézni
 - Mobil alkalmazás
-    - A szülő, a tanár és gyermeke nevét, valamint egyéni azonosítóját megadva, le tudja kérdezni a vizsgálati eredményeit
+    - A szülő a tanár és gyermeke nevét, valamint egyéni azonosítóját megadva, le tudja kérdezni a vizsgálat eredményeit
 
 ## Felhasznált technológiák
 

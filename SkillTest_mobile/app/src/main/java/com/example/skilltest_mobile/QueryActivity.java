@@ -39,7 +39,7 @@ public class QueryActivity extends AppCompatActivity {
 
 
 
-    // Diapply the results from the received string
+    // Display the results from the received string
     public void showResults(){
         String param = "";
         Bundle extras = getIntent().getExtras();
