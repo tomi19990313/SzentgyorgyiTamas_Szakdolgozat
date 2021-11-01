@@ -1,4 +1,4 @@
-# 2022_1_SzentgyörgyiTamás_Y4I7GS_Szakdolgozat_VP
+# 2021_1_SzentgyörgyiTamás_Y4I7GS_Szakdolgozat_VP
 
 ## _Képességteszt vizsgálat_
 
