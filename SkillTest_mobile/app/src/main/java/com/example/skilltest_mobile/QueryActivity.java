@@ -78,7 +78,11 @@ public class QueryActivity extends AppCompatActivity {
 
                     for (int i=0; i<results.length; i++){
                         TextView label2 = new TextView(this);
-                        label2.setText("    " + results[i]);
+
+                        String resultString = results[i];
+                        String[] resultArray = resultString.split("/");
+
+                        label2.setText("    " + resultArray[0] + "/" + resultArray[1] + ",   Ismétlések időtartama (mp): " + resultArray[2]);
                         linearLayout.addView(label2);
                     }
                 }
